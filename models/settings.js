@@ -16,6 +16,4 @@ const Settings = db.sequelize.define('settings', {
   }
 })
 
-Settings.sync().then(()=>console.log('settings table created'));
-
 module.exports = Settings

@@ -39,9 +39,4 @@ let db= {};
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-sequelize.sync()
-  .then(() => {
-    console.log(`Database & tables created!`)
-})
-
 module.exports = db;
