@@ -7,7 +7,7 @@ import { version } from './package.json'
 import config from './config'
 import log from './utils/log'
 import eventsRouter from './routes/events'
-
+import db from './components/db-config/index'
 import * as Events from './components/meetup-lib/stream-events'
 
 // create Express server
@@ -22,9 +22,15 @@ app.get('/', doctor({
   version,
 }))
 
-app.use('/events/upcoming', eventsRouter)
+//Create Tables
+db.sequelize.sync()
+.then(() => {
+  log.info('Database & tables created!');
+  // Fetching Meetup events
+  Events.fetching();
+})
 
-// Events.fetching();
+app.use('/events/upcoming', eventsRouter)
 
 app.listen(config.port, () => {
   log.info('❄️  api started 🚀 ', {

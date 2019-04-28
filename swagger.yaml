@@ -1,0 +1,81 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Blockchain Meetup Test"
+basePath: "/events/upcoming"
+tags:
+- name: "Events"
+schemes:
+- "https"
+- "http"
+paths:
+  /:
+    get:
+      tags:
+      - "events"
+      summary: "Get all events"
+      parameters:
+        - in: query
+          name: offset
+          type: string
+          required: true
+        - in: query
+          name: limit
+          type: string
+          required: true
+      description: ""
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "[Object]"
+        409:
+          description: "[Object] Error: true | Message: Error Message"
+  /city:
+    get:
+      tags:
+      - "events"
+      summary: "Get events with filtering by city and country"
+      parameters:
+        - in: query
+          name: city
+          type: string
+          required: true
+        - in: query
+          name: country
+          type: string
+          required: true
+        - in: query
+          name: offset
+          type: string
+          required: true
+        - in: query
+          name: limit
+          type: string
+          required: true          
+      description: ""
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "[Object]"
+        409:
+          description: "[Object] Error: true | Message: Error Message"
+  /event:
+    get:
+      tags:
+      - "events"
+      summary: "Get event by id"
+      parameters:
+        - in: query
+          name: id
+          type: string
+          required: true
+      description: ""
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "[Object]"
+        409:
+          description: "[Object] Error: true | Message: Error Message"          

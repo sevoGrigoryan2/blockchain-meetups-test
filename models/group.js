@@ -34,6 +34,4 @@ const Group = db.sequelize.define('groups', {
   }
 })
 
-Group.sync().then(() => console.log('groups table created'))
-
 module.exports = Group

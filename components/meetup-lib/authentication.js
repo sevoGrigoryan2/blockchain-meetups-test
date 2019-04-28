@@ -25,6 +25,9 @@ export const getAccessToken = () => new Promise(async (resolve, reject) => {
 
     request(options, async (err, res, body) => {
       if (err) throw new Error(err)
+      console.log('******** authSettings', authSettings);
+      console.log('******** authSettings length', authSettings.length );
+      console.log('******** authSettings body', JSON.parse(body));
       (authSettings && authSettings.length > 0) ? await Settings.update({
         value: JSON.parse(body)
       },{
@@ -33,7 +36,7 @@ export const getAccessToken = () => new Promise(async (resolve, reject) => {
         }
       }) : await Settings.create({
         key: 'auth',
-        value: parsedResponse
+        value: JSON.parse(body)
       })
       resolve(body);
     })
