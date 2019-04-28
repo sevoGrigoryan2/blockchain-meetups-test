@@ -19,3 +19,6 @@ $ npm install
 ```bash
 $ npm start
 ```
+
+### Endpointss
+For viewing application endpoints check up swagger.yml with importing yml file at <a href="https://editor.swagger.io/">https://editor.swagger.io</a>
