@@ -1,0 +1,33 @@
+{
+  "name": "blockchain-meetups-test",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "pm2 start ./bin/www  --interpreter babel-node -f"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bunyan": "^1.8.12",
+    "cors": "^2.8.5",
+    "doctor-zhivago": "^1.4.6",
+    "express": "4.16.4",
+    "lodash": "^4.17.11",
+    "mysql2": "^1.6.5",
+    "request": "^2.88.0",
+    "sequelize": "^4.41.2",
+    "uuid": "3.3.2"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-eslint": "10.0.1",
+    "babel-plugin-add-module-exports": "1.0.0",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-stage-0": "6.24.1",
+    "core-js": "3.0.0-beta.11",
+    "eslint": "5.9.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "nodemon": "1.18.7"
+  }
+}
